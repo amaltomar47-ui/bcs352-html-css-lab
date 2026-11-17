@@ -9,8 +9,6 @@
             --primary: #1d3557;
             --accent: #e63946;
             --secondary: #457b9d;
-            --light: #f1faee;
-            --dark: #0f172a;
             --card-bg: #ffffff;
             --border: #e2e8f0;
         }
@@ -23,7 +21,7 @@
             padding: 30px 20px;
         }
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
         }
         header {
@@ -34,8 +32,8 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
-        header h1 { font-size: 2rem; margin-bottom: 8px; }
-        header h2 { font-size: 1.25rem; font-weight: 400; opacity: 0.9; margin-bottom: 16px; }
+        header h1 { font-size: 2rem; margin-bottom: 6px; }
+        header h2 { font-size: 1.15rem; font-weight: 400; opacity: 0.9; margin-bottom: 16px; }
         .meta-bar {
             display: flex;
             flex-wrap: wrap;
@@ -48,7 +46,7 @@
         .meta-item strong { color: #fecdd3; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 20px;
         }
         .card {
@@ -70,7 +68,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border-bottom: 1px solid #f1f5f9;
             padding-bottom: 8px;
         }
@@ -86,27 +84,38 @@
         .card h3 {
             font-size: 1.15rem;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .card p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #64748b;
             margin-bottom: 15px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+        .links-group {
+            margin-bottom: 10px;
         }
         .links-list {
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         .links-list a {
             display: inline-block;
             text-decoration: none;
             background-color: #f1f5f9;
             color: #0f172a;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             border: 1px solid #e2e8f0;
             transition: all 0.2s;
@@ -150,238 +159,389 @@
             <!-- Assignment 1 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 01</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 01</span></div>
                     <h3>Starting a Git Repository</h3>
-                    <p>Git initialization, local user config, tracking files, commit messages and git oneline logs.</p>
+                    <p>Git initialization, local user config, home page headings and oneline commit logs.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-01/index.html" target="_blank">index.html</a></li>
-                    <li><a href="Assignment-01/terminal-output.txt" target="_blank">Terminal Output</a></li>
-                    <li><a href="Assignment-01/screenshots/index.png" class="screenshot-link" target="_blank">Screenshot</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">Source & Output</div>
+                        <div class="links-list">
+                            <a href="Assignment-01/index.html" target="_blank">index.html</a>
+                            <a href="Assignment-01/terminal-output.txt" target="_blank">terminal-output.txt</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-01/screenshots/index.png" class="screenshot-link" target="_blank">📷 index.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 2 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 02</span>
-                    </div>
-                    <h3>Pushing & Cloning Repositories</h3>
-                    <p>Bare repositories, adding remotes, pushing commits to origin, and cloning into duplicate directory.</p>
+                    <div class="card-header"><span class="badge">Assignment 02</span></div>
+                    <h3>Pushing & Cloning Repos</h3>
+                    <p>Bare repository setup, origin remote tracking, branch push, and local repo cloning.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-02/terminal-output.txt" target="_blank">Terminal Output Log</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">Terminal Output</div>
+                        <div class="links-list">
+                            <a href="Assignment-02/terminal-output.txt" target="_blank">terminal-output.txt</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 3 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 03</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 03</span></div>
                     <h3>Your First HTML Page</h3>
-                    <p>Document structure, HTML headings hierarchy (h1-h3), text formatting (strong, em, br).</p>
+                    <p>Document structure, heading hierarchy h1-h3, inline strong and em formatting.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-03/first.html" target="_blank">first.html</a></li>
-                    <li><a href="Assignment-03/headings.html" target="_blank">headings.html</a></li>
-                    <li><a href="Assignment-03/text-format.html" target="_blank">text-format.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-03/first.html" target="_blank">first.html</a>
+                            <a href="Assignment-03/headings.html" target="_blank">headings.html</a>
+                            <a href="Assignment-03/text-format.html" target="_blank">text-format.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-03/screenshots/first.png" class="screenshot-link" target="_blank">📷 first.png</a>
+                            <a href="Assignment-03/screenshots/headings.png" class="screenshot-link" target="_blank">📷 headings.png</a>
+                            <a href="Assignment-03/screenshots/text-format.png" class="screenshot-link" target="_blank">📷 text-format.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 4 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 04</span>
-                    </div>
-                    <h3>Divs, Attributes & A Small Fix</h3>
-                    <p>Layout divs (header, main, footer), data attributes (data-topic), and debugging unclosed tags.</p>
+                    <div class="card-header"><span class="badge">Assignment 04</span></div>
+                    <h3>Divs, Attributes & Debugging</h3>
+                    <p>Semantic div containers, custom data-topic attributes, and fixing broken HTML syntax.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-04/layout.html" target="_blank">layout.html</a></li>
-                    <li><a href="Assignment-04/attributes.html" target="_blank">attributes.html</a></li>
-                    <li><a href="Assignment-04/attendance-fixed.html" target="_blank">attendance-fixed.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-04/layout.html" target="_blank">layout.html</a>
+                            <a href="Assignment-04/attributes.html" target="_blank">attributes.html</a>
+                            <a href="Assignment-04/attendance-fixed.html" target="_blank">attendance-fixed.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-04/screenshots/layout.png" class="screenshot-link" target="_blank">📷 layout.png</a>
+                            <a href="Assignment-04/screenshots/attributes.png" class="screenshot-link" target="_blank">📷 attributes.png</a>
+                            <a href="Assignment-04/screenshots/attendance-fixed.png" class="screenshot-link" target="_blank">📷 attendance-fixed.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 5 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 05</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 05</span></div>
                     <h3>Links and Images</h3>
-                    <p>Anchor tags, relative navigation between pages, image embedding with alt tags and fixed dimensions.</p>
+                    <p>Inter-page bidirectional links and embedding 200x200 pictures with descriptive alt text.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-05/home.html" target="_blank">home.html</a></li>
-                    <li><a href="Assignment-05/portfolio.html" target="_blank">portfolio.html</a></li>
-                    <li><a href="Assignment-05/portfolio-image.html" target="_blank">portfolio-image.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-05/home.html" target="_blank">home.html</a>
+                            <a href="Assignment-05/portfolio.html" target="_blank">portfolio.html</a>
+                            <a href="Assignment-05/portfolio-image.html" target="_blank">portfolio-image.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-05/screenshots/home.png" class="screenshot-link" target="_blank">📷 home.png</a>
+                            <a href="Assignment-05/screenshots/portfolio.png" class="screenshot-link" target="_blank">📷 portfolio.png</a>
+                            <a href="Assignment-05/screenshots/portfolio-image.png" class="screenshot-link" target="_blank">📷 portfolio-image.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 6 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 06</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 06</span></div>
                     <h3>Types of HTML Lists</h3>
-                    <p>Unordered bullet lists, multi-level nested ordered lists, and definition/FAQ lists (dl, dt, dd).</p>
+                    <p>Unordered shopping list, nested numbered canteen menu, and library FAQ description list.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-06/shopping-list.html" target="_blank">shopping-list.html</a></li>
-                    <li><a href="Assignment-06/canteen-menu.html" target="_blank">canteen-menu.html</a></li>
-                    <li><a href="Assignment-06/faq.html" target="_blank">faq.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-06/shopping-list.html" target="_blank">shopping-list.html</a>
+                            <a href="Assignment-06/canteen-menu.html" target="_blank">canteen-menu.html</a>
+                            <a href="Assignment-06/faq.html" target="_blank">faq.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-06/screenshots/shopping-list.png" class="screenshot-link" target="_blank">📷 shopping-list.png</a>
+                            <a href="Assignment-06/screenshots/canteen-menu.png" class="screenshot-link" target="_blank">📷 canteen-menu.png</a>
+                            <a href="Assignment-06/screenshots/faq.png" class="screenshot-link" target="_blank">📷 faq.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 7 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 07</span>
-                    </div>
-                    <h3>About Me Semantic Page</h3>
-                    <p>Semantic tags (header, nav, main, section, footer), jump links (#about, #contact), mailto link.</p>
+                    <div class="card-header"><span class="badge">Assignment 07</span></div>
+                    <h3>About Me Page</h3>
+                    <p>Semantic tags: header, nav jump links (#about, #contact), main, and mailto footer link.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-07/about-me.html" target="_blank">about-me.html</a></li>
-                    <li><a href="Assignment-07/screenshots/about-me.png" class="screenshot-link" target="_blank">Screenshot</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Page</div>
+                        <div class="links-list">
+                            <a href="Assignment-07/about-me.html" target="_blank">about-me.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshot</div>
+                        <div class="links-list">
+                            <a href="Assignment-07/screenshots/about-me.png" class="screenshot-link" target="_blank">📷 about-me.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 8 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 08</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 08</span></div>
                     <h3>Sign-Up Forms & Choices</h3>
-                    <p>Form inputs, label binding, radio group selections, dropdown select menus, and required validation.</p>
+                    <p>POST forms, linked label inputs, radio button choices, select dropdowns, and required validation.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-08/signup.html" target="_blank">signup.html</a></li>
-                    <li><a href="Assignment-08/choices.html" target="_blank">choices.html</a></li>
-                    <li><a href="Assignment-08/signup-required.html" target="_blank">signup-required.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-08/signup.html" target="_blank">signup.html</a>
+                            <a href="Assignment-08/choices.html" target="_blank">choices.html</a>
+                            <a href="Assignment-08/signup-required.html" target="_blank">signup-required.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-08/screenshots/signup.png" class="screenshot-link" target="_blank">📷 signup.png</a>
+                            <a href="Assignment-08/screenshots/choices.png" class="screenshot-link" target="_blank">📷 choices.png</a>
+                            <a href="Assignment-08/screenshots/signup-required.png" class="screenshot-link" target="_blank">📷 signup-required.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 9 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 09</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 09</span></div>
                     <h3>Tables with Headers & Footers</h3>
-                    <p>Table semantics (thead, tbody, tfoot), captions, and accessible headers with scope attributes.</p>
+                    <p>Table caption, thead, tbody, tfoot with calculated class averages, and accessible scope attributes.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-09/marks.html" target="_blank">marks.html</a></li>
-                    <li><a href="Assignment-09/marks-average.html" target="_blank">marks-average.html</a></li>
-                    <li><a href="Assignment-09/marks-accessible.html" target="_blank">marks-accessible.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-09/marks.html" target="_blank">marks.html</a>
+                            <a href="Assignment-09/marks-average.html" target="_blank">marks-average.html</a>
+                            <a href="Assignment-09/marks-accessible.html" target="_blank">marks-accessible.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-09/screenshots/marks.png" class="screenshot-link" target="_blank">📷 marks.png</a>
+                            <a href="Assignment-09/screenshots/marks-average.png" class="screenshot-link" target="_blank">📷 marks-average.png</a>
+                            <a href="Assignment-09/screenshots/marks-accessible.png" class="screenshot-link" target="_blank">📷 marks-accessible.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 10 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 10</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 10</span></div>
                     <h3>CSS Fundamentals</h3>
-                    <p>Applying CSS inline, internally with style blocks, and via linked external stylesheets.</p>
+                    <p>Comparing inline styles, internal style blocks, and external linked stylesheets.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-10/inline-internal.html" target="_blank">inline-internal.html</a></li>
-                    <li><a href="Assignment-10/style.css" target="_blank">style.css</a></li>
-                    <li><a href="Assignment-10/linked.html" target="_blank">linked.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML & CSS Files</div>
+                        <div class="links-list">
+                            <a href="Assignment-10/inline-internal.html" target="_blank">inline-internal.html</a>
+                            <a href="Assignment-10/style.css" target="_blank">style.css</a>
+                            <a href="Assignment-10/linked.html" target="_blank">linked.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-10/screenshots/inline-internal.png" class="screenshot-link" target="_blank">📷 inline-internal.png</a>
+                            <a href="Assignment-10/screenshots/linked.png" class="screenshot-link" target="_blank">📷 linked.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 11 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 11</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 11</span></div>
                     <h3>Units & CSS Variables</h3>
-                    <p>Absolute px vs percentage and rem units, CSS custom properties (:root, var), and design token architecture.</p>
+                    <p>Pixel vs percentage vs rem units, :root variables (--main-color), and reusable design tokens.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-11/units.html" target="_blank">units.html</a></li>
-                    <li><a href="Assignment-11/variables.html" target="_blank">variables.html</a></li>
-                    <li><a href="Assignment-11/tokens-demo.html" target="_blank">tokens-demo.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML & CSS Files</div>
+                        <div class="links-list">
+                            <a href="Assignment-11/units.html" target="_blank">units.html</a>
+                            <a href="Assignment-11/variables.html" target="_blank">variables.html</a>
+                            <a href="Assignment-11/tokens.css" target="_blank">tokens.css</a>
+                            <a href="Assignment-11/tokens-demo.html" target="_blank">tokens-demo.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-11/screenshots/units.png" class="screenshot-link" target="_blank">📷 units.png</a>
+                            <a href="Assignment-11/screenshots/variables.png" class="screenshot-link" target="_blank">📷 variables.png</a>
+                            <a href="Assignment-11/screenshots/tokens-demo.png" class="screenshot-link" target="_blank">📷 tokens-demo.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 12 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 12</span>
-                    </div>
-                    <h3>Box Model, Cards & Scrolling</h3>
-                    <p>Comparing content-box vs border-box sizing, rounded cards with shadows, and overflow scroll containers.</p>
+                    <div class="card-header"><span class="badge">Assignment 12</span></div>
+                    <h3>Box Model, Cards & Scroll</h3>
+                    <p>content-box vs border-box sizing, rounded cards with shadows, and overflow scrollboxes.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-12/box-model.html" target="_blank">box-model.html</a></li>
-                    <li><a href="Assignment-12/card.html" target="_blank">card.html</a></li>
-                    <li><a href="Assignment-12/scroll.html" target="_blank">scroll.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-12/box-model.html" target="_blank">box-model.html</a>
+                            <a href="Assignment-12/card.html" target="_blank">card.html</a>
+                            <a href="Assignment-12/scroll.html" target="_blank">scroll.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-12/screenshots/box-model.png" class="screenshot-link" target="_blank">📷 box-model.png</a>
+                            <a href="Assignment-12/screenshots/card.png" class="screenshot-link" target="_blank">📷 card.png</a>
+                            <a href="Assignment-12/screenshots/scroll.png" class="screenshot-link" target="_blank">📷 scroll.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 13 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 13</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 13</span></div>
                     <h3>Flexbox Layouts</h3>
-                    <p>Flex horizontal navigation bar, centering cards with justify-content & align-items, flex wrapping.</p>
+                    <p>Horizontal dark navbar, centering price cards with justify & align, and wrapping shop cards.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-13/nav-flex.html" target="_blank">nav-flex.html</a></li>
-                    <li><a href="Assignment-13/centred-cards.html" target="_blank">centred-cards.html</a></li>
-                    <li><a href="Assignment-13/wrapping-cards.html" target="_blank">wrapping-cards.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-13/nav-flex.html" target="_blank">nav-flex.html</a>
+                            <a href="Assignment-13/centred-cards.html" target="_blank">centred-cards.html</a>
+                            <a href="Assignment-13/wrapping-cards.html" target="_blank">wrapping-cards.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-13/screenshots/nav-flex.png" class="screenshot-link" target="_blank">📷 nav-flex.png</a>
+                            <a href="Assignment-13/screenshots/centred-cards.png" class="screenshot-link" target="_blank">📷 centred-cards.png</a>
+                            <a href="Assignment-13/screenshots/wrapping-cards.png" class="screenshot-link" target="_blank">📷 wrapping-cards.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 14 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 14</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 14</span></div>
                     <h3>CSS Grid Layouts</h3>
-                    <p>3-column fr grid, auto-fill minmax photo galleries, and named dashboard grid areas (grid-template-areas).</p>
+                    <p>3-column equal fractional grid, responsive photo gallery with auto-fill, and named grid areas.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-14/grid-first.html" target="_blank">grid-first.html</a></li>
-                    <li><a href="Assignment-14/gallery.html" target="_blank">gallery.html</a></li>
-                    <li><a href="Assignment-14/dashboard-areas.html" target="_blank">dashboard-areas.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-14/grid-first.html" target="_blank">grid-first.html</a>
+                            <a href="Assignment-14/gallery.html" target="_blank">gallery.html</a>
+                            <a href="Assignment-14/dashboard-areas.html" target="_blank">dashboard-areas.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-14/screenshots/grid-first.png" class="screenshot-link" target="_blank">📷 grid-first.png</a>
+                            <a href="Assignment-14/screenshots/gallery.png" class="screenshot-link" target="_blank">📷 gallery.png</a>
+                            <a href="Assignment-14/screenshots/dashboard-areas.png" class="screenshot-link" target="_blank">📷 dashboard-areas.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Assignment 15 -->
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <span class="badge">Assignment 15</span>
-                    </div>
+                    <div class="card-header"><span class="badge">Assignment 15</span></div>
                     <h3>Responsive Media Queries</h3>
-                    <p>Mobile-first CSS architecture, responsive fluid images (max-width: 100%), and dynamic typography scale.</p>
+                    <p>Mobile-first card layouts, fluid responsive image scaling, and viewport-adaptive typography.</p>
                 </div>
-                <ul class="links-list">
-                    <li><a href="Assignment-15/mobile-first.html" target="_blank">mobile-first.html</a></li>
-                    <li><a href="Assignment-15/responsive-image.html" target="_blank">responsive-image.html</a></li>
-                    <li><a href="Assignment-15/responsive-text.html" target="_blank">responsive-text.html</a></li>
-                </ul>
+                <div>
+                    <div class="links-group">
+                        <div class="section-label">HTML Pages</div>
+                        <div class="links-list">
+                            <a href="Assignment-15/mobile-first.html" target="_blank">mobile-first.html</a>
+                            <a href="Assignment-15/responsive-image.html" target="_blank">responsive-image.html</a>
+                            <a href="Assignment-15/responsive-text.html" target="_blank">responsive-text.html</a>
+                        </div>
+                    </div>
+                    <div class="links-group">
+                        <div class="section-label">Screenshots</div>
+                        <div class="links-list">
+                            <a href="Assignment-15/screenshots/mobile-first.png" class="screenshot-link" target="_blank">📷 mobile-first.png</a>
+                            <a href="Assignment-15/screenshots/responsive-image.png" class="screenshot-link" target="_blank">📷 responsive-image.png</a>
+                            <a href="Assignment-15/screenshots/responsive-text.png" class="screenshot-link" target="_blank">📷 responsive-text.png</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
