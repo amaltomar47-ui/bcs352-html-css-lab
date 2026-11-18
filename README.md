@@ -2,7 +2,7 @@
 ## B.Tech CSE - Second Year
 ### HTML and CSS Introduction Lab (BCS352) — Lab Assignments (1 to 15)
 
-- **Student Name:** Amal Tomar
+- **Student Name:** Amal singh Tomar
 - **Roll Number:** 2510303070
 - **GitHub Username:** amaltomar47-ui
 - **Email:** amaltomar829@gmail.com
