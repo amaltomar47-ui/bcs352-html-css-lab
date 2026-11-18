@@ -5,7 +5,7 @@
 - **Student Name:** Amal Tomar
 - **Roll Number:** 2510303070
 - **GitHub Username:** amaltomar47-ui
-- **Email:** amaltomar47@gmail.com
+- **Email:** amaltomar829@gmail.com
 
 ---
 
