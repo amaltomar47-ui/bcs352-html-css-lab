@@ -3,350 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invertis University - HTML & CSS Lab Portal (BCS352)</title>
+    <title>Invertis University - HTML & CSS Lab (BCS352) Solution Portal</title>
     <style>
         :root {
-            --primary: #1d3557;
-            --accent: #e63946;
-            --secondary: #457b9d;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
+            --bg-body: #0b0f19;
+            --bg-card: #151d30;
+            --bg-card-sub: #1e293b;
+            --border-color: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --terminal-bg: #030712;
+            --code-bg: #0d1117;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            line-height: 1.6;
-            padding: 30px 20px;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
         }
+
         .container {
-            max-width: 1100px;
+            max-width: 1400px;
             margin: 0 auto;
         }
+
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #2b6cb0 100%);
-            color: white;
-            padding: 30px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--accent);
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
         }
-        header h1 { font-size: 2rem; margin-bottom: 6px; }
-        header h2 { font-size: 1.15rem; font-weight: 400; opacity: 0.9; margin-bottom: 16px; }
-        .meta-bar {
+
+        .header-top {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-        .meta-item strong { color: #fecdd3; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
-        }
-        .card-header {
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
         }
-        .badge {
-            background-color: var(--secondary);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 4px;
+
+        h1 {
+            font-size: 1.75rem;
+            color: #ffffff;
+        }
+
+        .badge-univ {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
         }
-        .card h3 {
-            font-size: 1.15rem;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-        .card p {
-            font-size: 0.88rem;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-        .links-list {
-            list-style: none;
+
+        .student-banner {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .links-list a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #f1f5f9;
-            color: #0f172a;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+
+        .student-banner span strong {
+            color: var(--accent);
+        }
+
+        .controls-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .selector-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+        }
+
+        label {
+            font-size: 0.9rem;
             font-weight: 600;
-            border: 1px solid #e2e8f0;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        select {
+            background: var(--bg-card-sub);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            min-width: 280px;
+        }
+
+        .task-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .task-btn {
+            background: var(--bg-card-sub);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.2s;
         }
-        .links-list a:hover {
-            background-color: var(--primary);
+
+        .task-btn:hover {
+            background: #334155;
+            color: #fff;
+        }
+
+        .task-btn.active {
+            background: var(--primary);
             color: white;
             border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
         }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #94a3b8;
-            font-size: 0.9rem;
+
+        .aim-banner {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--primary);
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+        }
+
+        .aim-banner strong {
+            color: #fff;
+        }
+
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-header {
+            background: var(--bg-card-sub);
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .action-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .code-container {
+            background: var(--code-bg);
+            padding: 16px;
+            overflow: auto;
+            max-height: 520px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .preview-container {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-height: 550px;
+            overflow-y: auto;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 240px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .screenshot-card {
+            background: var(--bg-card-sub);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .screenshot-header {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #1e293b;
+            display: block;
+        }
+
+        .nav-footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .nav-btn {
+            background: var(--bg-card-sub);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Invertis University, Bareilly</h1>
-            <h2>HTML and CSS Introduction Lab (BCS352) — Complete Lab Portfolio</h2>
-            <div class="meta-bar">
-                <div class="meta-item"><strong>Student:</strong> Amal Tomar</div>
-                <div class="meta-item"><strong>Roll No:</strong> 2510303070</div>
-                <div class="meta-item"><strong>GitHub:</strong> amaltomar47-ui</div>
-                <div class="meta-item"><strong>Email:</strong> amaltomar47@gmail.com</div>
-            </div>
-        </header>
 
-        <div class="grid">
-            <!-- Assignment 1 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 01</span></div>
-                    <h3>Starting a Git Repository</h3>
-                    <p>Git initialization, local user config, home page headings and oneline commit logs.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-01/index.html" target="_blank">index.html</a>
-                    <a href="Assignment-01/terminal-output.txt" target="_blank">terminal-output.txt</a>
-                    <a href="Assignment-01/terminal-output.png" target="_blank" style="background-color: #ecfdf5; color: #065f46; border-color: #a7f3d0;">📷 terminal-output.png</a>
-                </div>
-            </div>
+<div class="container">
+    <header>
+        <div class="header-top">
+            <h1>🌐 BCS352 – HTML and CSS Introduction Lab</h1>
+            <span class="badge-univ">Invertis University, Bareilly</span>
+        </div>
+        <div class="student-banner">
+            <span><strong>Student Name:</strong> Amal Tomar</span>
+            <span><strong>Roll Number:</strong> 2510303070</span>
+            <span><strong>Course:</strong> B.Tech CSE – 2nd Year</span>
+            <span><strong>Status:</strong> All 15 Assignments Verified with Screenshots</span>
+        </div>
+    </header>
 
-            <!-- Assignment 2 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 02</span></div>
-                    <h3>Pushing & Cloning Repos</h3>
-                    <p>Bare repository setup, origin remote tracking, branch push, and local repo cloning.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-02/terminal-output.txt" target="_blank">terminal-output.txt</a>
-                    <a href="Assignment-02/terminal-output.png" target="_blank" style="background-color: #ecfdf5; color: #065f46; border-color: #a7f3d0;">📷 terminal-output.png</a>
-                </div>
-            </div>
+    <div class="controls-card">
+        <div class="selector-group">
+            <label for="assignSelect">Select Assignment:</label>
+            <select id="assignSelect" onchange="onAssignmentChange()"></select>
 
-            <!-- Assignment 3 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 03</span></div>
-                    <h3>Your First HTML Page</h3>
-                    <p>Document structure, heading hierarchy h1-h3, inline strong and em formatting.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-03/first.html" target="_blank">first.html</a>
-                    <a href="Assignment-03/headings.html" target="_blank">headings.html</a>
-                    <a href="Assignment-03/text-format.html" target="_blank">text-format.html</a>
-                </div>
-            </div>
+            <label>Tasks:</label>
+            <div id="taskPills" class="task-pills"></div>
+        </div>
+    </div>
 
-            <!-- Assignment 4 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 04</span></div>
-                    <h3>Divs, Attributes & Debugging</h3>
-                    <p>Semantic div containers, custom data-topic attributes, and fixing broken HTML syntax.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-04/layout.html" target="_blank">layout.html</a>
-                    <a href="Assignment-04/attributes.html" target="_blank">attributes.html</a>
-                    <a href="Assignment-04/attendance-fixed.html" target="_blank">attendance-fixed.html</a>
-                </div>
-            </div>
+    <div class="aim-banner" id="aimBanner">
+        <strong>Aim:</strong> <span id="aimText"></span>
+    </div>
 
-            <!-- Assignment 5 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 05</span></div>
-                    <h3>Links and Images</h3>
-                    <p>Inter-page bidirectional links and embedding 200x200 pictures with descriptive alt text.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-05/home.html" target="_blank">home.html</a>
-                    <a href="Assignment-05/portfolio.html" target="_blank">portfolio.html</a>
-                    <a href="Assignment-05/portfolio-image.html" target="_blank">portfolio-image.html</a>
-                </div>
+    <div class="workspace-grid">
+        <!-- Left Panel: Source Code -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title" id="codePanelTitle">📄 Source Code</div>
+                <button class="action-btn" onclick="copyCode()">📋 Copy Code</button>
             </div>
+            <pre id="codeView" class="code-container"></pre>
+        </div>
 
-            <!-- Assignment 6 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 06</span></div>
-                    <h3>Types of HTML Lists</h3>
-                    <p>Unordered shopping list, nested numbered canteen menu, and library FAQ description list.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-06/shopping-list.html" target="_blank">shopping-list.html</a>
-                    <a href="Assignment-06/canteen-menu.html" target="_blank">canteen-menu.html</a>
-                    <a href="Assignment-06/faq.html" target="_blank">faq.html</a>
-                </div>
+        <!-- Right Panel: Output & Screenshot -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title" id="outputPanelTitle">📸 Page Output & Screenshot</div>
+                <span id="taskTypeBadge" style="font-size: 0.78rem; background: #334155; padding: 4px 8px; border-radius: 4px; color: var(--accent);">Rendered</span>
             </div>
+            <div class="preview-container">
+                <div id="liveFrameArea" style="display: none;">
+                    <div style="font-weight: 600; color: #cbd5e1; font-size: 0.88rem; margin-bottom: 6px;">🌐 Live Interactive Browser View:</div>
+                    <iframe id="previewFrame" class="preview-iframe"></iframe>
+                </div>
 
-            <!-- Assignment 7 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 07</span></div>
-                    <h3>About Me Page</h3>
-                    <p>Semantic tags: header, nav jump links (#about, #contact), main, and mailto footer link.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-07/about-me.html" target="_blank">about-me.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 8 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 08</span></div>
-                    <h3>Sign-Up Forms & Choices</h3>
-                    <p>POST forms, linked label inputs, radio button choices, select dropdowns, and required validation.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-08/signup.html" target="_blank">signup.html</a>
-                    <a href="Assignment-08/choices.html" target="_blank">choices.html</a>
-                    <a href="Assignment-08/signup-required.html" target="_blank">signup-required.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 9 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 09</span></div>
-                    <h3>Tables with Headers & Footers</h3>
-                    <p>Table caption, thead, tbody, tfoot with calculated class averages, and accessible scope attributes.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-09/marks.html" target="_blank">marks.html</a>
-                    <a href="Assignment-09/marks-average.html" target="_blank">marks-average.html</a>
-                    <a href="Assignment-09/marks-accessible.html" target="_blank">marks-accessible.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 10 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 10</span></div>
-                    <h3>CSS Fundamentals</h3>
-                    <p>Comparing inline styles, internal style blocks, and external linked stylesheets.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-10/inline-internal.html" target="_blank">inline-internal.html</a>
-                    <a href="Assignment-10/style.css" target="_blank">style.css</a>
-                    <a href="Assignment-10/linked.html" target="_blank">linked.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 11 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 11</span></div>
-                    <h3>Units & CSS Variables</h3>
-                    <p>Pixel vs percentage vs rem units, :root variables (--main-color), and reusable design tokens.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-11/units.html" target="_blank">units.html</a>
-                    <a href="Assignment-11/variables.html" target="_blank">variables.html</a>
-                    <a href="Assignment-11/tokens-demo.html" target="_blank">tokens-demo.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 12 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 12</span></div>
-                    <h3>Box Model, Cards & Scroll</h3>
-                    <p>content-box vs border-box sizing, rounded cards with shadows, and overflow scrollboxes.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-12/box-model.html" target="_blank">box-model.html</a>
-                    <a href="Assignment-12/card.html" target="_blank">card.html</a>
-                    <a href="Assignment-12/scroll.html" target="_blank">scroll.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 13 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 13</span></div>
-                    <h3>Flexbox Layouts</h3>
-                    <p>Horizontal dark navbar, centering price cards with justify & align, and wrapping shop cards.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-13/nav-flex.html" target="_blank">nav-flex.html</a>
-                    <a href="Assignment-13/centred-cards.html" target="_blank">centred-cards.html</a>
-                    <a href="Assignment-13/wrapping-cards.html" target="_blank">wrapping-cards.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 14 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 14</span></div>
-                    <h3>CSS Grid Layouts</h3>
-                    <p>3-column equal fractional grid, responsive photo gallery with auto-fill, and named grid areas.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-14/grid-first.html" target="_blank">grid-first.html</a>
-                    <a href="Assignment-14/gallery.html" target="_blank">gallery.html</a>
-                    <a href="Assignment-14/dashboard-areas.html" target="_blank">dashboard-areas.html</a>
-                </div>
-            </div>
-
-            <!-- Assignment 15 -->
-            <div class="card">
-                <div>
-                    <div class="card-header"><span class="badge">Assignment 15</span></div>
-                    <h3>Responsive Media Queries</h3>
-                    <p>Mobile-first card layouts, fluid responsive image scaling, and viewport-adaptive typography.</p>
-                </div>
-                <div class="links-list">
-                    <a href="Assignment-15/mobile-first.html" target="_blank">mobile-first.html</a>
-                    <a href="Assignment-15/responsive-image.html" target="_blank">responsive-image.html</a>
-                    <a href="Assignment-15/responsive-text.html" target="_blank">responsive-text.html</a>
+                <div class="screenshot-card">
+                    <div class="screenshot-header">
+                        <span>📸 Verified Output Screenshot:</span>
+                    </div>
+                    <img id="screenshotImg" src="" alt="Output Screenshot">
                 </div>
             </div>
         </div>
-
-        <footer>
-            <p>Invertis University, Bareilly &bull; B.Tech CSE (BCS352 - HTML and CSS Introduction Lab) &bull; Prepared for Amal Tomar (2510303070)</p>
-        </footer>
     </div>
+
+    <div class="nav-footer">
+        <button class="nav-btn" onclick="prevAssignment()">⬅ Previous Assignment</button>
+        <span id="assignIndexText" style="color: var(--text-muted); font-size: 0.9rem;">Assignment 1 of 15</span>
+        <button class="nav-btn" onclick="nextAssignment()">Next Assignment ➡</button>
+    </div>
+</div>
+
+<script>
+    const LAB_DATA = [{"num": 1, "folder": "Assignment-01", "title": "Starting a Git Repository", "aim": "Start a Git repository for your lab folder and save your work with commits.", "tasks": [{"taskNum": 1, "name": "Task 1: git init & config", "filename": "terminal-output.txt", "isHtml": false, "htmlPath": null, "code": "======================================================================\nINVERTIS UNIVERSITY, BAREILLY\nB.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\nAssignment 1: Starting a Git Repository\nStudent Name: Amal Tomar\nRoll Number: 2510303070\nAim: Start a Git repository for your lab folder and save your work with commits.\n======================================================================\n\nTask 1:\n$ mkdir html-lab\n$ cd html-lab\n$ git init\nInitialized empty Git repository in C:/Users/thaku/.gemini/antigravity/scratch/bcs352-html-css-lab/git-workspace/html-lab/.git/\n\n$ git config --local user.name \"Amal Tomar\"\n$ git config --local user.email \"amaltomar47@gmail.com\"\n\n$ git config user.name\nAmal Tomar\n\n$ git config user.email\namaltomar47@gmail.com\n\nTask 2:\n$ git status\nOn branch master\n\nNo commits yet\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\tindex.html\n\nnothing added to commit but untracked files present (use \"git add\" to track)\n\n$ git add index.html\n$ git commit -m \"Add home page\"\n[master (root-commit) 4a12b89] Add home page\n 1 file changed, 17 insertions(+)\n create mode 100644 index.html\n\nTask 3:\n$ git status\nOn branch master\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   index.html\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n\n$ git add index.html\n$ git commit -m \"Add next meeting heading\"\n[master 8d39f12] Add next meeting heading\n 1 file changed, 2 insertions(+), 1 deletion(-)\n\n$ git log --oneline\n8d39f12 Add next meeting heading\n4a12b89 Add home page\n", "screenshot": "Assignment-01/terminal-output.png"}, {"taskNum": 2, "name": "Task 2: Commit Home Page", "filename": "index.html", "isHtml": true, "htmlPath": "Assignment-01/index.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 1: Starting a Git Repository - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Home Page</title>\n</head>\n<body>\n    <h1>Welcome to HTML and CSS Lab</h1>\n    <h2>Next Meeting: Lab Session 2 on Friday 10:00 AM</h2>\n</body>\n</html>\n", "screenshot": "Assignment-01/terminal-output.png"}, {"taskNum": 3, "name": "Task 3: Second Commit & git log", "filename": "terminal-output.txt", "isHtml": false, "htmlPath": null, "code": "======================================================================\nINVERTIS UNIVERSITY, BAREILLY\nB.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\nAssignment 1: Starting a Git Repository\nStudent Name: Amal Tomar\nRoll Number: 2510303070\nAim: Start a Git repository for your lab folder and save your work with commits.\n======================================================================\n\nTask 1:\n$ mkdir html-lab\n$ cd html-lab\n$ git init\nInitialized empty Git repository in C:/Users/thaku/.gemini/antigravity/scratch/bcs352-html-css-lab/git-workspace/html-lab/.git/\n\n$ git config --local user.name \"Amal Tomar\"\n$ git config --local user.email \"amaltomar47@gmail.com\"\n\n$ git config user.name\nAmal Tomar\n\n$ git config user.email\namaltomar47@gmail.com\n\nTask 2:\n$ git status\nOn branch master\n\nNo commits yet\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\tindex.html\n\nnothing added to commit but untracked files present (use \"git add\" to track)\n\n$ git add index.html\n$ git commit -m \"Add home page\"\n[master (root-commit) 4a12b89] Add home page\n 1 file changed, 17 insertions(+)\n create mode 100644 index.html\n\nTask 3:\n$ git status\nOn branch master\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   index.html\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n\n$ git add index.html\n$ git commit -m \"Add next meeting heading\"\n[master 8d39f12] Add next meeting heading\n 1 file changed, 2 insertions(+), 1 deletion(-)\n\n$ git log --oneline\n8d39f12 Add next meeting heading\n4a12b89 Add home page\n", "screenshot": "Assignment-01/terminal-output.png"}]}, {"num": 2, "folder": "Assignment-02", "title": "Pushing and Cloning a Repository", "aim": "Send your commits to a second repository on your computer and make a copy of it with clone.", "tasks": [{"taskNum": 1, "name": "Task 1: Bare Remote & Origin", "filename": "terminal-output.txt", "isHtml": false, "htmlPath": null, "code": "======================================================================\nINVERTIS UNIVERSITY, BAREILLY\nB.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\nAssignment 2: Pushing and Cloning a Repository\nStudent Name: Amal Tomar\nRoll Number: 2510303070\nAim: Send your commits to a second repository on your computer and make a copy of it with clone.\n======================================================================\n\nTask 1:\n[html-lab] $ git init --bare ../html-remote\nInitialized empty Git repository in C:/Users/thaku/.gemini/antigravity/scratch/bcs352-html-css-lab/git-workspace/html-remote/\n\n[html-lab] $ git remote add origin ../html-remote\n[html-lab] $ git remote -v\norigin\t../html-remote (fetch)\norigin\t../html-remote (push)\n\nTask 2:\n[html-lab] $ git push origin master\nTo ../html-remote\n * [new branch]      master -> master\n\nTask 3:\n[html-lab] $ cd ..\n[git-workspace] $ git clone html-remote html-copy\nCloning into 'html-copy'...\ndone.\n\n[git-workspace] $ cd html-copy\n[html-copy] $ git log --oneline\n8d39f12 Add next meeting heading\n4a12b89 Add home page\n", "screenshot": "Assignment-02/terminal-output.png"}, {"taskNum": 2, "name": "Task 2: git push origin", "filename": "terminal-output.txt", "isHtml": false, "htmlPath": null, "code": "======================================================================\nINVERTIS UNIVERSITY, BAREILLY\nB.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\nAssignment 2: Pushing and Cloning a Repository\nStudent Name: Amal Tomar\nRoll Number: 2510303070\nAim: Send your commits to a second repository on your computer and make a copy of it with clone.\n======================================================================\n\nTask 1:\n[html-lab] $ git init --bare ../html-remote\nInitialized empty Git repository in C:/Users/thaku/.gemini/antigravity/scratch/bcs352-html-css-lab/git-workspace/html-remote/\n\n[html-lab] $ git remote add origin ../html-remote\n[html-lab] $ git remote -v\norigin\t../html-remote (fetch)\norigin\t../html-remote (push)\n\nTask 2:\n[html-lab] $ git push origin master\nTo ../html-remote\n * [new branch]      master -> master\n\nTask 3:\n[html-lab] $ cd ..\n[git-workspace] $ git clone html-remote html-copy\nCloning into 'html-copy'...\ndone.\n\n[git-workspace] $ cd html-copy\n[html-copy] $ git log --oneline\n8d39f12 Add next meeting heading\n4a12b89 Add home page\n", "screenshot": "Assignment-02/terminal-output.png"}, {"taskNum": 3, "name": "Task 3: git clone & log", "filename": "terminal-output.txt", "isHtml": false, "htmlPath": null, "code": "======================================================================\nINVERTIS UNIVERSITY, BAREILLY\nB.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\nAssignment 2: Pushing and Cloning a Repository\nStudent Name: Amal Tomar\nRoll Number: 2510303070\nAim: Send your commits to a second repository on your computer and make a copy of it with clone.\n======================================================================\n\nTask 1:\n[html-lab] $ git init --bare ../html-remote\nInitialized empty Git repository in C:/Users/thaku/.gemini/antigravity/scratch/bcs352-html-css-lab/git-workspace/html-remote/\n\n[html-lab] $ git remote add origin ../html-remote\n[html-lab] $ git remote -v\norigin\t../html-remote (fetch)\norigin\t../html-remote (push)\n\nTask 2:\n[html-lab] $ git push origin master\nTo ../html-remote\n * [new branch]      master -> master\n\nTask 3:\n[html-lab] $ cd ..\n[git-workspace] $ git clone html-remote html-copy\nCloning into 'html-copy'...\ndone.\n\n[git-workspace] $ cd html-copy\n[html-copy] $ git log --oneline\n8d39f12 Add next meeting heading\n4a12b89 Add home page\n", "screenshot": "Assignment-02/terminal-output.png"}]}, {"num": 3, "folder": "Assignment-03", "title": "Your First HTML Page", "aim": "Write a first HTML page with a title, headings and a paragraph, and format some text.", "tasks": [{"taskNum": 1, "name": "Task 1: Basic Structure & Heading", "filename": "first.html", "isHtml": true, "htmlPath": "Assignment-03/first.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 3: Your First HTML Page - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>My First Page</title>\n</head>\n<body>\n    <h1>Hello, I am Amal.</h1>\n</body>\n</html>\n", "screenshot": "Assignment-03/first.png"}, {"taskNum": 2, "name": "Task 2: Heading Hierarchy (h1-h3)", "filename": "headings.html", "isHtml": true, "htmlPath": "Assignment-03/headings.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 3: Your First HTML Page - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Headings Practice</title>\n</head>\n<body>\n    <h1>Major Topic: Introduction to Computer Science</h1>\n    <h2>Subtopic: Web Development Fundamentals</h2>\n    <h3>Section: Understanding HTML Elements</h3>\n    <p>HTML headings define the hierarchical structure of a webpage, ranging from most important (h1) to least important (h6), guiding users and search engines through the content.</p>\n</body>\n</html>\n", "screenshot": "Assignment-03/headings.png"}, {"taskNum": 3, "name": "Task 3: Formatting (strong, em, br)", "filename": "text-format.html", "isHtml": true, "htmlPath": "Assignment-03/text-format.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 3: Your First HTML Page - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Text Formatting</title>\n</head>\n<body>\n    <p>Web development is an <strong>essential</strong> skill for modern computer science engineers.<br>It enables developers to build interactive applications for millions of users worldwide.</p>\n    <p>Writing clean, semantic markup is <em>crucial</em> for web accessibility and responsive design.</p>\n</body>\n</html>\n", "screenshot": "Assignment-03/text-format.png"}]}, {"num": 4, "folder": "Assignment-04", "title": "Divs, Attributes and a Small Fix", "aim": "Group parts of a page with div elements, add a data attribute, and fix the errors in a broken page.", "tasks": [{"taskNum": 1, "name": "Task 1: Semantic Div Layout", "filename": "layout.html", "isHtml": true, "htmlPath": "Assignment-04/layout.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 4: Divs, Attributes and a Small Fix - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Page Layout with Divs</title>\n    <style>\n        .header { background-color: #e2e8f0; padding: 15px; margin-bottom: 10px; border-radius: 4px; }\n        .main { background-color: #edf2f7; padding: 20px; margin-bottom: 10px; border-radius: 4px; }\n        .footer { background-color: #cbd5e0; padding: 15px; border-radius: 4px; }\n    </style>\n</head>\n<body>\n    <div class=\"header\">\n        <h1>Website Header</h1>\n        <p>Welcome to the portal banner and primary navigation section.</p>\n    </div>\n    <div class=\"main\">\n        <h2>Main Content Section</h2>\n        <p>This is the primary workspace where core articles and assignments are presented.</p>\n    </div>\n    <div class=\"footer\">\n        <p>&copy; 2026 Invertis University - All Rights Reserved.</p>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-04/layout.png"}, {"taskNum": 2, "name": "Task 2: id and data-* attributes", "filename": "attributes.html", "isHtml": true, "htmlPath": "Assignment-04/attributes.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 4: Divs, Attributes and a Small Fix - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Attributes Demonstration</title>\n</head>\n<body>\n    <div id=\"profile\">\n        <h2>User Profile</h2>\n        <p data-topic=\"hobbies\">In my free time, I enjoy competitive programming, reading technology blogs, and web design.</p>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-04/attributes.png"}, {"taskNum": 3, "name": "Task 3: HTML Bug Fixes", "filename": "attendance-fixed.html", "isHtml": true, "htmlPath": "Assignment-04/attendance-fixed.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 4: Divs, Attributes and a Small Fix - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html>\n<head>\n    <title>Attendance</title>\n</head>\n<body>\n    <h1>Attendance Report</h1>\n    <p>Asha: 92%</p>\n    <p>Rohan: 85%</p>\n</body>\n</html>\n", "screenshot": "Assignment-04/attendance-fixed.png"}]}, {"num": 5, "folder": "Assignment-05", "title": "Links and Images", "aim": "Link two pages together and add a picture with alt text.", "tasks": [{"taskNum": 1, "name": "Task 1: Home Page with Link", "filename": "home.html", "isHtml": true, "htmlPath": "Assignment-05/home.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 5: Links and Images - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Home</title>\n</head>\n<body>\n    <h1>Welcome to My Site</h1>\n    <p>Explore my projects and background by visiting my <a href=\"portfolio.html\">portfolio</a>.</p>\n</body>\n</html>\n", "screenshot": "Assignment-05/home.png"}, {"taskNum": 2, "name": "Task 2: Portfolio with Back Link", "filename": "portfolio.html", "isHtml": true, "htmlPath": "Assignment-05/portfolio.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 5: Links and Images - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Portfolio</title>\n</head>\n<body>\n    <h1>Student Portfolio</h1>\n    <p>Welcome to my student portfolio showcasing lab tasks and projects.</p>\n    <p><a href=\"home.html\">Back to Home</a></p>\n</body>\n</html>\n", "screenshot": "Assignment-05/portfolio.png"}, {"taskNum": 3, "name": "Task 3: Image with Dimensions & Alt", "filename": "portfolio-image.html", "isHtml": true, "htmlPath": "Assignment-05/portfolio-image.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 5: Links and Images - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Portfolio Image</title>\n</head>\n<body>\n    <h1>My Project Showcase</h1>\n    <img src=\"images/sample.jpg\" width=\"200\" height=\"200\" alt=\"Lab project thumbnail displaying geometric design\">\n</body>\n</html>\n", "screenshot": "Assignment-05/portfolio-image.png"}]}, {"num": 6, "folder": "Assignment-06", "title": "Types of HTML Lists", "aim": "Make a bulleted list, a numbered list with a nested list, and a description list.", "tasks": [{"taskNum": 1, "name": "Task 1: Unordered List (ul)", "filename": "shopping-list.html", "isHtml": true, "htmlPath": "Assignment-06/shopping-list.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 6: Types of HTML Lists - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Shopping List</title>\n</head>\n<body>\n    <h1>Shopping List</h1>\n    <ul>\n        <li>Notebook</li>\n        <li>Pen</li>\n        <li>Bag</li>\n    </ul>\n</body>\n</html>\n", "screenshot": "Assignment-06/shopping-list.png"}, {"taskNum": 2, "name": "Task 2: Nested Ordered List (ol)", "filename": "canteen-menu.html", "isHtml": true, "htmlPath": "Assignment-06/canteen-menu.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 6: Types of HTML Lists - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Canteen Menu</title>\n</head>\n<body>\n    <h1>Canteen Menu</h1>\n    <ol>\n        <li>Samosa</li>\n        <li>\n            Sandwich\n            <ol>\n                <li>Cheese</li>\n                <li>Vegetable</li>\n            </ol>\n        </li>\n    </ol>\n</body>\n</html>\n", "screenshot": "Assignment-06/canteen-menu.png"}, {"taskNum": 3, "name": "Task 3: Description List (dl, dt, dd)", "filename": "faq.html", "isHtml": true, "htmlPath": "Assignment-06/faq.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 6: Types of HTML Lists - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Frequently Asked Questions</title>\n</head>\n<body>\n    <h1>Library FAQ</h1>\n    <dl>\n        <dt>How many books can I borrow?</dt>\n        <dd>Students can borrow up to four books at a time for a duration of 14 days.</dd>\n        <dt>Is the library open on Sunday?</dt>\n        <dd>The library remains open on Sundays from 10:00 AM to 4:00 PM for reading room access.</dd>\n    </dl>\n</body>\n</html>\n", "screenshot": "Assignment-06/faq.png"}]}, {"num": 7, "folder": "Assignment-07", "title": "About Me Page", "aim": "Build a short About Me page with semantic tags, an about section and a contact link.", "tasks": [{"taskNum": 1, "name": "Complete Semantic About Me Page", "filename": "about-me.html", "isHtml": true, "htmlPath": "Assignment-07/about-me.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 7: About Me Page - Task 1, 2 & 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>About Me - Amal Tomar</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 25px; }\n        header { border-bottom: 2px solid #2b6cb0; padding-bottom: 10px; margin-bottom: 20px; }\n        nav a { margin-right: 18px; text-decoration: none; color: #2b6cb0; font-weight: bold; font-size: 1.1rem; }\n        nav a:hover { text-decoration: underline; }\n        section { min-height: 160px; padding: 15px 0; }\n        footer { margin-top: 40px; border-top: 1px solid #cbd5e0; padding-top: 15px; color: #4a5568; }\n        footer a { color: #e63946; text-decoration: none; font-weight: bold; }\n    </style>\n</head>\n<body>\n    <header>\n        <h1>Amal Tomar</h1>\n        <nav>\n            <a href=\"#about\">About</a>\n            <a href=\"#contact\">Contact</a>\n        </nav>\n    </header>\n\n    <main>\n        <section id=\"about\">\n            <h2>About me</h2>\n            <p>Hello! My name is Amal Tomar. I am a second-year B.Tech Computer Science and Engineering student at Invertis University, Bareilly. I am passionate about modern web technologies, HTML5, responsive CSS design, and software development.</p>\n        </section>\n    </main>\n\n    <footer id=\"contact\">\n        <p>Get in touch via email: <a href=\"mailto:amaltomar47@gmail.com\">amaltomar47@gmail.com</a></p>\n    </footer>\n</body>\n</html>\n", "screenshot": "Assignment-07/about-me.png"}]}, {"num": 8, "folder": "Assignment-08", "title": "Sign-Up Forms and Choices", "aim": "Make a labelled form with text, email and password fields, choices and a submit button.", "tasks": [{"taskNum": 1, "name": "Task 1: Sign-Up Form with Labels", "filename": "signup.html", "isHtml": true, "htmlPath": "Assignment-08/signup.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 8: Sign-Up Forms and Choices - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Sign Up</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        .form-group { margin-bottom: 15px; }\n        label { display: inline-block; width: 120px; font-weight: bold; }\n        input { padding: 6px; width: 220px; }\n        button { padding: 8px 16px; cursor: pointer; }\n    </style>\n</head>\n<body>\n    <h1>User Registration</h1>\n    <form method=\"post\" action=\"thanks.html\">\n        <div class=\"form-group\">\n            <label for=\"fullname\">Full Name:</label>\n            <input type=\"text\" id=\"fullname\" name=\"fullname\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"email\">Email Address:</label>\n            <input type=\"email\" id=\"email\" name=\"email\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"password\">Password:</label>\n            <input type=\"password\" id=\"password\" name=\"password\">\n        </div>\n        <button type=\"submit\">Submit</button>\n    </form>\n</body>\n</html>\n", "screenshot": "Assignment-08/signup.png"}, {"taskNum": 2, "name": "Task 2: Radio Buttons & Dropdown", "filename": "choices.html", "isHtml": true, "htmlPath": "Assignment-08/choices.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 8: Sign-Up Forms and Choices - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Course & Demographic Choices</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        fieldset { margin-bottom: 15px; width: 320px; padding: 15px; }\n        select { padding: 6px; }\n    </style>\n</head>\n<body>\n    <h1>Student Choices Form</h1>\n    <form>\n        <fieldset>\n            <legend>Gender</legend>\n            <input type=\"radio\" id=\"gender-female\" name=\"gender\" value=\"Female\">\n            <label for=\"gender-female\">Female</label>\n            <input type=\"radio\" id=\"gender-male\" name=\"gender\" value=\"Male\">\n            <label for=\"gender-male\">Male</label>\n        </fieldset>\n\n        <p>\n            <label for=\"course-select\">Select Course:</label>\n            <select id=\"course-select\" name=\"course\">\n                <option value=\"BCA\">BCA</option>\n                <option value=\"B.Tech\">B.Tech</option>\n            </select>\n        </p>\n    </form>\n</body>\n</html>\n", "screenshot": "Assignment-08/choices.png"}, {"taskNum": 3, "name": "Task 3: Form Validation & Submit", "filename": "signup-required.html", "isHtml": true, "htmlPath": "Assignment-08/signup-required.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 8: Sign-Up Forms and Choices - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Required Sign Up</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        .form-group { margin-bottom: 15px; }\n        label { display: inline-block; width: 120px; font-weight: bold; }\n        input { padding: 6px; width: 240px; }\n        button { padding: 8px 18px; cursor: pointer; }\n    </style>\n</head>\n<body>\n    <h1>Required Registration Form</h1>\n    <form action=\"thanks.html\" method=\"post\">\n        <div class=\"form-group\">\n            <label for=\"reg-name\">Full Name:</label>\n            <input type=\"text\" id=\"reg-name\" name=\"fullname\" placeholder=\"Enter your full name\" required>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"reg-email\">Email:</label>\n            <input type=\"email\" id=\"reg-email\" name=\"email\" required>\n        </div>\n        <button type=\"submit\">Submit</button>\n    </form>\n</body>\n</html>\n", "screenshot": "Assignment-08/signup-required.png"}]}, {"num": 9, "folder": "Assignment-09", "title": "Tables with Headers and Footers", "aim": "Build a table with a caption, a header, rows and a footer, and add scope attributes.", "tasks": [{"taskNum": 1, "name": "Task 1: Table with thead & tbody", "filename": "marks.html", "isHtml": true, "htmlPath": "Assignment-09/marks.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 9: Tables with Headers and Footers - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Marks of Class A</title>\n    \n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        table { border-collapse: collapse; width: 400px; margin-top: 15px; }\n        caption { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; text-align: left; }\n        th, td { border: 1px solid #718096; padding: 10px; text-align: center; }\n        thead th { background-color: #edf2f7; }\n        tfoot td { font-weight: bold; background-color: #f7fafc; }\n    </style>\n    \n</head>\n<body>\n    <table>\n        <caption>Marks of Class A</caption>\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Maths</th>\n                <th>Science</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Asha</td>\n                <td>78</td>\n                <td>85</td>\n            </tr>\n            <tr>\n                <td>Rohan</td>\n                <td>64</td>\n                <td>70</td>\n            </tr>\n            <tr>\n                <td>Neha</td>\n                <td>91</td>\n                <td>88</td>\n            </tr>\n        </tbody>\n    </table>\n</body>\n</html>\n", "screenshot": "Assignment-09/marks.png"}, {"taskNum": 2, "name": "Task 2: Table with tfoot Summary", "filename": "marks-average.html", "isHtml": true, "htmlPath": "Assignment-09/marks-average.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 9: Tables with Headers and Footers - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Class Average Marks</title>\n    \n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        table { border-collapse: collapse; width: 400px; margin-top: 15px; }\n        caption { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; text-align: left; }\n        th, td { border: 1px solid #718096; padding: 10px; text-align: center; }\n        thead th { background-color: #edf2f7; }\n        tfoot td { font-weight: bold; background-color: #f7fafc; }\n    </style>\n    \n</head>\n<body>\n    <table>\n        <caption>Marks of Class A</caption>\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Maths</th>\n                <th>Science</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Asha</td>\n                <td>78</td>\n                <td>85</td>\n            </tr>\n            <tr>\n                <td>Rohan</td>\n                <td>64</td>\n                <td>70</td>\n            </tr>\n        </tbody>\n        <tfoot>\n            <tr>\n                <td>Class average</td>\n                <td>71</td>\n                <td>77.5</td>\n            </tr>\n        </tfoot>\n    </table>\n</body>\n</html>\n", "screenshot": "Assignment-09/marks-average.png"}, {"taskNum": 3, "name": "Task 3: Accessible Table with Scope", "filename": "marks-accessible.html", "isHtml": true, "htmlPath": "Assignment-09/marks-accessible.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 9: Tables with Headers and Footers - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Accessible Table</title>\n    \n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        table { border-collapse: collapse; width: 400px; margin-top: 15px; }\n        caption { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; text-align: left; }\n        th, td { border: 1px solid #718096; padding: 10px; text-align: center; }\n        thead th { background-color: #edf2f7; }\n        tfoot td { font-weight: bold; background-color: #f7fafc; }\n    </style>\n    \n</head>\n<body>\n    <table>\n        <caption>Marks of Class A</caption>\n        <thead>\n            <tr>\n                <th scope=\"col\">Name</th>\n                <th scope=\"col\">Maths</th>\n                <th scope=\"col\">Science</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <th scope=\"row\">Asha</th>\n                <td>78</td>\n                <td>85</td>\n            </tr>\n            <tr>\n                <th scope=\"row\">Rohan</th>\n                <td>64</td>\n                <td>70</td>\n            </tr>\n        </tbody>\n    </table>\n</body>\n</html>\n", "screenshot": "Assignment-09/marks-accessible.png"}]}, {"num": 10, "folder": "Assignment-10", "title": "CSS Fundamentals", "aim": "Apply CSS in three ways (inline, internal and linked) and use selectors and text styles.", "tasks": [{"taskNum": 1, "name": "Task 1: Inline & Internal CSS", "filename": "inline-internal.html", "isHtml": true, "htmlPath": "Assignment-10/inline-internal.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 10: CSS Fundamentals - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Inline and Internal CSS</title>\n    <style>\n        h1 {\n            color: navy;\n        }\n        .highlight {\n            background-color: yellow;\n        }\n    </style>\n</head>\n<body>\n    <h1>Introduction to CSS Styling</h1>\n    <p style=\"color: red;\">This paragraph is styled using an inline CSS attribute to make the text red.</p>\n    <p class=\"highlight\">This paragraph utilizes the highlight class defined inside the internal style block.</p>\n</body>\n</html>\n", "screenshot": "Assignment-10/inline-internal.png"}, {"taskNum": 2, "name": "Task 2: External Stylesheet (style.css)", "filename": "style.css", "isHtml": false, "htmlPath": null, "code": "/*\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 10: CSS Fundamentals - External Stylesheet\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n*/\n\nh1 {\n    color: navy;\n}\n\n.note {\n    font-style: italic;\n}\n\n#title {\n    text-decoration: underline;\n}\n\np {\n    font-size: 18px;\n    color: grey;\n}\n", "screenshot": "Assignment-10/linked.png"}, {"taskNum": 3, "name": "Task 3: Linked CSS Page", "filename": "linked.html", "isHtml": true, "htmlPath": "Assignment-10/linked.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 10: CSS Fundamentals - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Linked External CSS</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n    <h1 id=\"title\">Cascading Style Sheets Demonstration</h1>\n    <p class=\"note\">First note paragraph: External styles keep presentation cleanly decoupled from HTML markup.</p>\n    <p class=\"note\">Second note paragraph: Linking one stylesheet across multiple pages ensures consistent visual branding.</p>\n</body>\n</html>\n", "screenshot": "Assignment-10/linked.png"}]}, {"num": 11, "folder": "Assignment-11", "title": "Units and CSS Variables", "aim": "Use CSS units and store colours and spacing in variables.", "tasks": [{"taskNum": 1, "name": "Task 1: CSS Units (px, %, rem)", "filename": "units.html", "isHtml": true, "htmlPath": "Assignment-11/units.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 11: Units and CSS Variables - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>CSS Units</title>\n    <style>\n        .box-px {\n            width: 200px;\n            height: 40px;\n            background-color: #48bb78;\n            margin-bottom: 12px;\n            color: white;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n        }\n        .box-percent {\n            width: 50%;\n            height: 40px;\n            background-color: #4299e1;\n            margin-bottom: 12px;\n            color: white;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n        }\n        .large-text {\n            font-size: 1.5rem;\n        }\n    </style>\n</head>\n<body>\n    <h1>CSS Units Demonstration</h1>\n    <div class=\"box-px\">200px Wide Box</div>\n    <div class=\"box-percent\">50% Wide Box</div>\n    <p class=\"large-text\">This paragraph is styled with a relative unit of 1.5rem font size.</p>\n</body>\n</html>\n", "screenshot": "Assignment-11/units.png"}, {"taskNum": 2, "name": "Task 2: CSS Custom Properties", "filename": "variables.html", "isHtml": true, "htmlPath": "Assignment-11/variables.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 11: Units and CSS Variables - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>CSS Custom Properties</title>\n    <style>\n        :root {\n            --main-color: #1d3557;\n            --accent-color: #e63946;\n            --page-padding: 20px;\n        }\n        body {\n            color: var(--main-color);\n            padding: var(--page-padding);\n            font-family: Arial, sans-serif;\n            line-height: 1.6;\n        }\n        h1 {\n            color: var(--accent-color);\n        }\n    </style>\n</head>\n<body>\n    <h1>Heading Styled with Accent Color Variable</h1>\n    <p>This paragraph text is styled with the main color variable, and the page padding is powered by custom properties defined in the root selector.</p>\n</body>\n</html>\n", "screenshot": "Assignment-11/variables.png"}, {"taskNum": 3, "name": "Task 3: Design Tokens (tokens.css)", "filename": "tokens-demo.html", "isHtml": true, "htmlPath": "Assignment-11/tokens-demo.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 11: Units and CSS Variables - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Design Tokens Demo</title>\n    <link rel=\"stylesheet\" href=\"tokens.css\">\n</head>\n<body>\n    <h1>Design Tokens Demonstration</h1>\n    <p>This page links tokens.css to demonstrate design token variables for colors, heading size, and spacing.</p>\n</body>\n</html>\n", "screenshot": "Assignment-11/tokens-demo.png"}]}, {"num": 12, "folder": "Assignment-12", "title": "Box Model, Cards and Scrolling", "aim": "Compare the box sizing types, style a card and make a box scroll.", "tasks": [{"taskNum": 1, "name": "Task 1: Box-Sizing Comparison", "filename": "box-model.html", "isHtml": true, "htmlPath": "Assignment-12/box-model.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 12: Box Model, Cards and Scrolling - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Box Model Comparison</title>\n    <style>\n        body { font-family: Arial, sans-serif; padding: 20px; }\n        .box1 {\n            width: 200px;\n            padding: 20px;\n            border: 5px solid #2b6cb0;\n            box-sizing: content-box;\n            background-color: #ebf8ff;\n            margin-bottom: 20px;\n        }\n        .box2 {\n            width: 200px;\n            padding: 20px;\n            border: 5px solid #c53030;\n            box-sizing: border-box;\n            background-color: #fff5f5;\n        }\n    </style>\n</head>\n<body>\n    <h1>Box Sizing Comparison</h1>\n    <div class=\"box1\">\n        <strong>Box 1 (content-box):</strong> Total width = 200 + 40 (padding) + 10 (border) = 250px.\n    </div>\n    <div class=\"box2\">\n        <strong>Box 2 (border-box):</strong> Total width remains exactly 200px including padding and border.\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-12/box-model.png"}, {"taskNum": 2, "name": "Task 2: Rounded Border Card", "filename": "card.html", "isHtml": true, "htmlPath": "Assignment-12/card.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 12: Box Model, Cards and Scrolling - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Card Component</title>\n    <style>\n        body { font-family: Arial, sans-serif; padding: 30px; background-color: #f7fafc; }\n        .card {\n            background-color: #ffffff;\n            border: 2px solid #cbd5e0;\n            border-radius: 12px;\n            padding: 16px;\n            width: 300px;\n            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);\n        }\n        .card h3 {\n            margin-top: 0;\n            color: #2d3748;\n        }\n        .card p {\n            color: #718096;\n            margin-bottom: 0;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"card\">\n        <h3>Web Design Masterclass</h3>\n        <p>Learn core HTML semantics, responsive CSS architectures, and modern browser layouts from the ground up.</p>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-12/card.png"}, {"taskNum": 3, "name": "Task 3: Overflow Scrolling", "filename": "scroll.html", "isHtml": true, "htmlPath": "Assignment-12/scroll.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 12: Box Model, Cards and Scrolling - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Scrollable Box</title>\n    <style>\n        body { font-family: Arial, sans-serif; padding: 25px; }\n        .scroll-box {\n            height: 120px;\n            overflow: auto;\n            border: 2px solid #4a5568;\n            padding: 12px;\n            width: 280px;\n            background-color: #edf2f7;\n        }\n        .scroll-box p {\n            margin: 8px 0;\n            padding: 6px;\n            background-color: #ffffff;\n            border-radius: 4px;\n        }\n    </style>\n</head>\n<body>\n    <h1>Overflow Scrolling Demonstration</h1>\n    <div class=\"scroll-box\">\n        <p>Line 1: Introduction to Web Standards.</p>\n        <p>Line 2: Semantic HTML Elements.</p>\n        <p>Line 3: CSS Cascading & Specificity.</p>\n        <p>Line 4: Box Model and Border Calculations.</p>\n        <p>Line 5: Modern Responsive Media Queries.</p>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-12/scroll.png"}]}, {"num": 13, "folder": "Assignment-13", "title": "Flexbox Layouts", "aim": "Lay out a navigation bar, centred cards and cards that wrap, using Flexbox.", "tasks": [{"taskNum": 1, "name": "Task 1: Horizontal Flex Navbar", "filename": "nav-flex.html", "isHtml": true, "htmlPath": "Assignment-13/nav-flex.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 13: Flexbox Layouts - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Flexbox Navigation Bar</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }\n        nav {\n            display: flex;\n            background-color: #1a202c;\n            padding: 14px 20px;\n            gap: 25px;\n            border-radius: 6px;\n        }\n        nav a {\n            color: #ffffff;\n            text-decoration: none;\n            font-weight: 500;\n        }\n        nav a:hover {\n            color: #63b3ed;\n        }\n    </style>\n</head>\n<body>\n    <nav>\n        <a href=\"#home\">Home</a>\n        <a href=\"#about\">About</a>\n        <a href=\"#events\">Events</a>\n        <a href=\"#contact\">Contact</a>\n    </nav>\n</body>\n</html>\n", "screenshot": "Assignment-13/nav-flex.png"}, {"taskNum": 2, "name": "Task 2: Centred Flex Cards", "filename": "centred-cards.html", "isHtml": true, "htmlPath": "Assignment-13/centred-cards.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 13: Flexbox Layouts - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Centred Cards</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f7fafc; }\n        .row {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            gap: 20px;\n            min-height: 350px;\n            background-color: #edf2f7;\n            border-radius: 8px;\n            padding: 20px;\n        }\n        .card {\n            background: #ffffff;\n            padding: 20px;\n            border-radius: 8px;\n            width: 180px;\n            text-align: center;\n            box-shadow: 0 4px 6px rgba(0,0,0,0.1);\n        }\n        .card h3 { margin-top: 0; color: #2d3748; }\n        .card p { font-size: 1.4rem; font-weight: bold; color: #2b6cb0; margin-bottom: 0; }\n    </style>\n</head>\n<body>\n    <h1 style=\"text-align: center;\">Subscription Plans</h1>\n    <div class=\"row\">\n        <div class=\"card\">\n            <h3>Starter</h3>\n            <p>199</p>\n        </div>\n        <div class=\"card\">\n            <h3>Standard</h3>\n            <p>349</p>\n        </div>\n        <div class=\"card\">\n            <h3>Premium</h3>\n            <p>499</p>\n        </div>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-13/centred-cards.png"}, {"taskNum": 3, "name": "Task 3: Flex-Wrap Shop Cards", "filename": "wrapping-cards.html", "isHtml": true, "htmlPath": "Assignment-13/wrapping-cards.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 13: Flexbox Layouts - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Wrapping Cards</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        .card-container {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 15px;\n            margin-top: 20px;\n        }\n        .card {\n            background-color: #ebf8ff;\n            border: 1px solid #bee3f8;\n            border-radius: 8px;\n            padding: 20px;\n            width: 180px;\n            box-sizing: border-box;\n        }\n        .card h3 { margin: 0 0 10px 0; color: #2c5282; }\n        .card p { margin: 0; font-weight: bold; color: #2d3748; }\n    </style>\n</head>\n<body>\n    <h1>Stationery Shop</h1>\n    <div class=\"card-container\">\n        <div class=\"card\">\n            <h3>Notebook</h3>\n            <p>Price: 60</p>\n        </div>\n        <div class=\"card\">\n            <h3>Pen</h3>\n            <p>Price: 15</p>\n        </div>\n        <div class=\"card\">\n            <h3>Bag</h3>\n            <p>Price: 350</p>\n        </div>\n        <div class=\"card\">\n            <h3>Book</h3>\n            <p>Price: 120</p>\n        </div>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-13/wrapping-cards.png"}]}, {"num": 14, "folder": "Assignment-14", "title": "CSS Grid Layouts", "aim": "Make a grid with equal columns, a responsive gallery and a layout with named areas.", "tasks": [{"taskNum": 1, "name": "Task 1: Equal Fraction Columns (fr)", "filename": "grid-first.html", "isHtml": true, "htmlPath": "Assignment-14/grid-first.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 14: CSS Grid Layouts - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>First CSS Grid</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        .grid-container {\n            display: grid;\n            grid-template-columns: 1fr 1fr 1fr;\n            gap: 12px;\n            max-width: 600px;\n        }\n        .box {\n            background-color: #3182ce;\n            color: #ffffff;\n            font-size: 1.5rem;\n            font-weight: bold;\n            padding: 30px;\n            text-align: center;\n            border-radius: 6px;\n        }\n    </style>\n</head>\n<body>\n    <h1>Equal Columns Grid</h1>\n    <div class=\"grid-container\">\n        <div class=\"box\">1</div>\n        <div class=\"box\">2</div>\n        <div class=\"box\">3</div>\n        <div class=\"box\">4</div>\n        <div class=\"box\">5</div>\n        <div class=\"box\">6</div>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-14/grid-first.png"}, {"taskNum": 2, "name": "Task 2: Auto-Fill Responsive Gallery", "filename": "gallery.html", "isHtml": true, "htmlPath": "Assignment-14/gallery.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 14: CSS Grid Layouts - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Photo Gallery Grid</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 25px; }\n        .gallery-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));\n            gap: 10px;\n            margin-top: 20px;\n        }\n        .photo-box {\n            background-color: #edf2f7;\n            border: 2px dashed #a0aec0;\n            padding: 35px 15px;\n            text-align: center;\n            font-weight: bold;\n            color: #4a5568;\n            border-radius: 8px;\n        }\n    </style>\n</head>\n<body>\n    <h1>Club Photo Gallery</h1>\n    <div class=\"gallery-grid\">\n        <div class=\"photo-box\">Photo 1</div>\n        <div class=\"photo-box\">Photo 2</div>\n        <div class=\"photo-box\">Photo 3</div>\n        <div class=\"photo-box\">Photo 4</div>\n        <div class=\"photo-box\">Photo 5</div>\n        <div class=\"photo-box\">Photo 6</div>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-14/gallery.png"}, {"taskNum": 3, "name": "Task 3: Grid Template Areas", "filename": "dashboard-areas.html", "isHtml": true, "htmlPath": "Assignment-14/dashboard-areas.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 14: CSS Grid Layouts - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Dashboard Grid Areas</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }\n        .dashboard {\n            display: grid;\n            grid-template-columns: 200px 1fr;\n            grid-template-areas:\n                \"header header\"\n                \"sidebar main\"\n                \"footer footer\";\n            gap: 12px;\n            min-height: 450px;\n        }\n        header {\n            grid-area: header;\n            background-color: #2b6cb0;\n            color: white;\n            padding: 15px 20px;\n            border-radius: 6px;\n        }\n        aside {\n            grid-area: sidebar;\n            background-color: #e2e8f0;\n            padding: 20px;\n            border-radius: 6px;\n        }\n        main {\n            grid-area: main;\n            background-color: #edf2f7;\n            padding: 20px;\n            border-radius: 6px;\n        }\n        footer {\n            grid-area: footer;\n            background-color: #2d3748;\n            color: white;\n            padding: 15px 20px;\n            border-radius: 6px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"dashboard\">\n        <header>\n            <h2>Dashboard Header</h2>\n        </header>\n        <aside>\n            <h3>Sidebar Nav</h3>\n            <ul>\n                <li>Overview</li>\n                <li>Analytics</li>\n                <li>Settings</li>\n            </ul>\n        </aside>\n        <main>\n            <h2>Main Analytics Area</h2>\n            <p>Welcome to the main dashboard workspace powered by CSS Grid template areas.</p>\n        </main>\n        <footer>\n            <p>&copy; 2026 Invertis University Portal Dashboard</p>\n        </footer>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-14/dashboard-areas.png"}]}, {"num": 15, "folder": "Assignment-15", "title": "Responsive Pages with Media Queries", "aim": "Use a media query to change a layout, make a picture scale with its box, and set text sizes with rem units.", "tasks": [{"taskNum": 1, "name": "Task 1: Mobile-First Breakpoint", "filename": "mobile-first.html", "isHtml": true, "htmlPath": "Assignment-15/mobile-first.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 15: Responsive Pages with Media Queries - Task 1\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Mobile First Responsive Cards</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f7fafc;\n        }\n        .cards {\n            display: flex;\n            flex-direction: column;\n            gap: 15px;\n        }\n        .card {\n            background: #ffffff;\n            border: 1px solid #e2e8f0;\n            border-radius: 8px;\n            padding: 16px;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.05);\n        }\n        .card h2 {\n            margin-top: 0;\n            color: #2b6cb0;\n        }\n\n        @media (min-width: 600px) {\n            .cards {\n                flex-direction: row;\n            }\n            .card {\n                flex: 1;\n            }\n        }\n    </style>\n</head>\n<body>\n    <h1>Mobile-First Responsive Layout</h1>\n    <div class=\"cards\">\n        <div class=\"card\">\n            <h2>Course Modules</h2>\n            <p>Covers HTML5 document semantics, responsive design patterns, and CSS3 layout models.</p>\n        </div>\n        <div class=\"card\">\n            <h2>Lab Practicals</h2>\n            <p>Hands-on coding exercises, version control with Git, and browser rendering inspections.</p>\n        </div>\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-15/mobile-first.png"}, {"taskNum": 2, "name": "Task 2: Fluid Responsive Image", "filename": "responsive-image.html", "isHtml": true, "htmlPath": "Assignment-15/responsive-image.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 15: Responsive Pages with Media Queries - Task 2\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Image</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        .image-container {\n            width: 80%;\n            max-width: 500px;\n            border: 2px solid #cbd5e0;\n            padding: 10px;\n            border-radius: 8px;\n        }\n        img {\n            max-width: 100%;\n            height: auto;\n            display: block;\n        }\n    </style>\n</head>\n<body>\n    <h1>Responsive Image Scaling</h1>\n    <div class=\"image-container\">\n        <img src=\"images/sample.jpg\" alt=\"Responsive graphic displaying dynamic scaling\">\n    </div>\n</body>\n</html>\n", "screenshot": "Assignment-15/responsive-image.png"}, {"taskNum": 3, "name": "Task 3: Responsive Typography", "filename": "responsive-text.html", "isHtml": true, "htmlPath": "Assignment-15/responsive-text.html", "code": "<!--\n  INVERTIS UNIVERSITY, BAREILLY\n  B.Tech CSE - Second Year | HTML and CSS Introduction Lab (BCS352)\n  Assignment 15: Responsive Pages with Media Queries - Task 3\n  Student Name: Amal Tomar\n  Roll Number: 2510303070\n-->\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Typography</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            font-size: 1rem;\n            line-height: 1.6;\n        }\n        h1 {\n            font-size: 1.5rem;\n            color: #2b6cb0;\n        }\n\n        @media (min-width: 600px) {\n            h1 {\n                font-size: 2.5rem;\n            }\n        }\n    </style>\n</head>\n<body>\n    <h1>Responsive Typography Heading</h1>\n    <p>The font size of this body text is 1rem. On mobile viewports below 600px, the heading is sized at 1.5rem. When the browser window is resized to 600px or wider, the media query smoothly increases the heading to 2.5rem.</p>\n</body>\n</html>\n", "screenshot": "Assignment-15/responsive-text.png"}]}];
+
+    let currentAssignIdx = 0;
+    let currentTaskIdx = 0;
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('assignSelect');
+        LAB_DATA.forEach((assign, idx) => {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.textContent = `Assignment ${assign.num.toString().padStart(2, '0')}: ${assign.title}`;
+            select.appendChild(opt);
+        });
+
+        loadAssignment(0);
+    });
+
+    function onAssignmentChange() {
+        const select = document.getElementById('assignSelect');
+        loadAssignment(parseInt(select.value));
+    }
+
+    function loadAssignment(idx) {
+        currentAssignIdx = idx;
+        currentTaskIdx = 0;
+        document.getElementById('assignSelect').value = idx;
+        document.getElementById('assignIndexText').textContent = `Assignment ${idx + 1} of ${LAB_DATA.length}`;
+        document.getElementById('aimText').textContent = LAB_DATA[idx].aim;
+
+        const assign = LAB_DATA[idx];
+        const pillsContainer = document.getElementById('taskPills');
+        pillsContainer.innerHTML = '';
+
+        assign.tasks.forEach((t, tIdx) => {
+            const btn = document.createElement('button');
+            btn.className = `task-btn ${tIdx === 0 ? 'active' : ''}`;
+            btn.textContent = t.name;
+            btn.onclick = () => selectTask(tIdx);
+            pillsContainer.appendChild(btn);
+        });
+
+        renderCurrentTask();
+    }
+
+    function selectTask(tIdx) {
+        currentTaskIdx = tIdx;
+        const buttons = document.querySelectorAll('.task-btn');
+        buttons.forEach((b, i) => {
+            b.classList.toggle('active', i === tIdx);
+        });
+        renderCurrentTask();
+    }
+
+    function renderCurrentTask() {
+        const assign = LAB_DATA[currentAssignIdx];
+        const task = assign.tasks[currentTaskIdx];
+
+        document.getElementById('codePanelTitle').innerHTML = `📄 ${assign.folder} / ${task.filename}`;
+        document.getElementById('codeView').textContent = task.code;
+
+        const liveArea = document.getElementById('liveFrameArea');
+        const previewFrame = document.getElementById('previewFrame');
+        const screenshotImg = document.getElementById('screenshotImg');
+
+        if (task.isHtml) {
+            liveArea.style.display = 'block';
+            previewFrame.src = task.htmlPath;
+        } else {
+            liveArea.style.display = 'none';
+        }
+
+        screenshotImg.src = task.screenshot;
+    }
+
+    function copyCode() {
+        const code = document.getElementById('codeView').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Code copied to clipboard!");
+        });
+    }
+
+    function prevAssignment() {
+        if (currentAssignIdx > 0) loadAssignment(currentAssignIdx - 1);
+    }
+
+    function nextAssignment() {
+        if (currentAssignIdx < LAB_DATA.length - 1) loadAssignment(currentAssignIdx + 1);
+    }
+</script>
 </body>
 </html>
